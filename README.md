@@ -34,6 +34,7 @@ Die verwundbare Version f\u00fchrt das Kommando
 ping -c 1 <ip>  # Linux/macOS
 ping -n 1 <ip>  # Windows
 ```
+
 direkt in der Shell aus. Dadurch k\u00f6nnen angeh\u00e4ngte Befehle ausgef\u00fchrt werden.
 
 Die sichere Variante pr\u00fcft die IP-Adresse mittels Regex
