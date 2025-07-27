@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure Coding – Command Injection</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Secure Coding – Command Injection Demo</h1>
+
+    <div class="toggle">
+      <label><input type="radio" name="mode" value="vulnerable" checked> Verwundbare Version</label>
+      <label><input type="radio" name="mode" value="secure"> Sichere Version</label>
+    </div>
+
+    <input type="text" id="ip" placeholder="z. B. 127.0.0.1 oder 127.0.0.1; ls" />
+    <button onclick="ping()">Ping senden</button>
+
+    <pre id="output"></pre>
+
+    <h2>📘 Erklärung</h2>
+    <p><strong>Verwundbare Version:</strong> Der Server führt das Kommando <code>ping -c 1 &lt;ip&gt;</code> direkt aus – ohne Validierung. Ein Angreifer könnte so zusätzliche Shell-Befehle ausführen (z. B. <code>; ls</code>).</p>
+    <p><strong>Sichere Version:</strong> Die Eingabe wird auf gültige IP-Adressen geprüft, und das Kommando wird über <code>subprocess.run()</code> mit Argumenten übergeben – ohne Shell-Zugriff.</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
