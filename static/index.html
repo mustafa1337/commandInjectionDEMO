@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Secure Coding – Command Injection</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="static/style.css" />
 </head>
 <body>
   <div class="container">
@@ -33,6 +33,6 @@
     <p><strong>Verwundbare Version:</strong> Der Server führt ein <code>ping</code>-Kommando direkt in der Shell aus. Je nach gewähltem Betriebssystem lautet es <code>ping -c 1 &lt;ip&gt;</code> (Linux/macOS) oder <code>ping -n 1 &lt;ip&gt;</code> (Windows). Ohne Validierung kann ein Angreifer weitere Befehle anhängen, z. B. <code>; ls</code> bzw. <code>&amp; dir</code>.</p>
     <p><strong>Sichere Version:</strong> Die Eingabe wird auf gültige IP-Adressen geprüft und das Kommando ohne Shell mit <code>subprocess.run()</code> ausgeführt. Dadurch wird eine Befehlsinjektion verhindert.</p>
   </div>
-  <script src="script.js"></script>
+  <script src="static/script.js"></script>
 </body>
 </html>
